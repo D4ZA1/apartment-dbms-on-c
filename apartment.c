@@ -8,7 +8,7 @@ int dispres(); //to display residents
 int dispguest(); //to display guests
 int rent(); //to find the rent
 int maintain(); //to find charges of residents
-int random(); //to generate a random number between 2 specific numbers
+int getRandom(); //to generate a random number between 2 specific numbers
 int square(); //to print box around menu
 int continuation(); //for asking the decision of user whether to continue to menu or leave the program
 int menu(); //for taking all the data into one single input 
@@ -236,9 +236,9 @@ int maintain(int a){
     for(int i=0;i<a;++i){
         if(strcmp(s[i].name,ch)==0){
             if(strcmp(s[i].r[i].flattype,"2BHK")==0 || strcmp(s[i].r[i].flattype,"2bhk")==0){
-            s[i].m[i].water = random(900,2000);
-            s[i].m[i].elec = random(900,2000);
-            s[i].m[i].pool = random(700,900);
+            s[i].m[i].water = getRandom(900,2000);
+            s[i].m[i].elec = getRandom(900,2000);
+            s[i].m[i].pool = getRandom(700,900);
            for(d=1;d<=k;d++){
         for(j=1;j<=q;j++){
             if(d==1 | j==1 | d==k | j==q ){
@@ -260,9 +260,9 @@ int maintain(int a){
             }
 
            else if(strcmp(s[i].r[i].flattype,"3BHK")==0 || strcmp(s[i].r[i].flattype,"3bhk")==0){
-           s[i].m[i].water = random(1500,3000);
-           s[i].m[i].elec = random(1000,2500);
-           s[i].m[i].pool = random(700,900);
+           s[i].m[i].water = getRandom(1500,3000);
+           s[i].m[i].elec = getRandom(1000,2500);
+           s[i].m[i].pool = getRandom(700,900);
            for(d=1;d<=k;d++){
         for(j=1;j<=q;j++){
             if(d==1 | j==1 | d==k | j==q ){
@@ -284,9 +284,9 @@ int maintain(int a){
            }
 
            else if(strcmp(s[i].r[i].flattype,"4BHK")==0 || strcmp(s[i].r[i].flattype,"4bhk")==0){
-           s[i].m[i].water = random(2000,3000);
-           s[i].m[i].elec = random(1500,3000);
-           s[i].m[i].pool = random(1000,1500);
+           s[i].m[i].water = getRandom(2000,3000);
+           s[i].m[i].elec = getRandom(1500,3000);
+           s[i].m[i].pool = getRandom(1000,1500);
           for(d=1;d<=k;d++){
         for(j=1;j<=q;j++){
             if(d==1 | j==1 | d==k | j==q ){
@@ -420,7 +420,7 @@ int dispres(int a){
 }
 
 
-int random(int i, int j){
+int getRandom(int i, int j){
     int lower = i, upper = j, num;
     num = (rand() % (upper - lower + 1)) + lower;
 return num;
